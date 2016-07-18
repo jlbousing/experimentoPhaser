@@ -1,0 +1,18 @@
+#modal {
+width:40%; 
+height:40%; 
+position:fixed; /*Con este código hacemos que el contenedor se mantenga en la pantalla y para que tome las dimensiones del body y no de la entrada*/
+background-color: rgba(1, 1, 1, 0.9); /*Color de fondo, incluye opacidad del 90%*/
+top:0; /*Position superior*/
+left:0; /*Posición lateral*/
+z-index:9999; /*Evitamos que algún elemento del blog sobreponga la ventana modal*/
+}
+
+#contenido-interno { 
+margin:140px auto; /*Separación arriba y centrado*/
+font-size:12px; /*Tamaño de la fuente*/
+width:600px; /*Ancho del contenedor*/
+text-align:center; /*Alineación del texto*/
+color:#222; /*Color del texto*/
+background:#fff; /*Color de fondo*/
+}
