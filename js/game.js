@@ -1,5 +1,12 @@
+//VARIABLES QUE ALMACENAN LA INFORMACIÓN DEL ANCHO Y ALTO DE LA PANTALLA QUE EL USUARIO TIENE
+var width = screen.width;
+console.log(width)
+var height = screen.height;
+console.log(height)
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+
+//SE DECLARA EL JUEGO CON LA INICIALIZACIÓN DE LA LIBRERÍA
+var game = new Phaser.Game(width,height, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update, render: render});
 
 function preload() {
     game.load.image('backdrop', 'assets/HD-Game-Wallpaper-HD-Wallpapers_ndjuLSA.jpg');
@@ -58,9 +65,9 @@ function create() {
     
     
     
-    ScoreText = game.add.text(300,50,"PUNTUACIÓN: "+cont,{ font: "32px Arial", fill: "#f26c4f", align: "left" });
+    ScoreText = game.add.text((width/2),50,"PUNTUACIÓN: "+cont,{ font: "32px Arial", fill: "#f26c4f", align: "left" });
     ScoreText.fixedToCamera = true; //SE MUEVE JUNTO A LA CÁMARA
-    ScoreText.cameraOffset.setTo(300,50); //SE QUEDA FIJA EN ESA POSICIÓN DE LA PANTALLA
+    ScoreText.cameraOffset.setTo((width/2),50); //SE QUEDA FIJA EN ESA POSICIÓN DE LA PANTALLA
     
     //AGREGANDO LOS POINTS
     sprite1 = game.add.sprite(game.world.randomX,game.world.randomY,"point",ClickPoint);
@@ -103,3 +110,5 @@ function CerrarModal(){
 function render(){
      game.debug.cameraInfo(game.camera, 32, 32);
 }
+
+//FUNCIÓN PARA CAMBIAR EL TAMAÑO DE LA PANTALLA
